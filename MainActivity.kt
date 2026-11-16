@@ -83,7 +83,7 @@ class MainActivity : ComponentActivity(), SensorEventListener {
             progress = prefs.getInt("cal", 50)
             setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
                 override fun onProgressChanged(s: SeekBar?, p: Int, fromUser: Boolean) {
-                    overlay.focalScale = 0.7f + p * 0.006f
+                    this@MainActivity.overlay.focalScale = 0.7f + p * 0.006f
                     prefs.edit().putInt("cal", p).apply()
                 }
                 override fun onStartTrackingTouch(s: SeekBar?) {}
